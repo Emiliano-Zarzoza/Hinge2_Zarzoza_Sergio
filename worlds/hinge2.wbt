@@ -2,8 +2,8 @@
 WorldInfo {
 }
 Viewpoint {
-  orientation -0.6993180062634123 0.709605604028985 0.08610582353375085 0.2443573336807484
-  position 0.542882284426422 1.09270541237931 2.044097685959049
+  orientation -0.8932347291393088 0.4381045910242465 0.10097567025230955 0.43523987708170514
+  position 1.0179286046171023 1.8993350057104417 1.8438545838154883
 }
 TexturedBackground {
 }
@@ -29,7 +29,7 @@ Solid {
         anchor 0 0.5 0
       }
       endPoint Solid {
-        translation 0.2500011524123995 0.49999015348165554 0
+        translation 0.24999898348478017 0.4999876825132309 0
         children [
           Shape {
             appearance PBRAppearance {
@@ -43,6 +43,7 @@ Solid {
             jointParameters HingeJointParameters {
               axis 0 0 1
               anchor 0.25 0 0
+              staticFriction 0.01
             }
             endPoint Solid {
               translation 0.3 0 0
@@ -54,6 +55,28 @@ Solid {
                   }
                   geometry DEF G_GREENBOX Box {
                     size 0.1 0.01 0.1
+                  }
+                }
+                HingeJoint {
+                  jointParameters HingeJointParameters {
+                    anchor 0.05 0 0
+                  }
+                  endPoint Solid {
+                    translation 0.125 0 0
+                    rotation 1 0 0 0
+                    children [
+                      Shape {
+                        appearance PBRAppearance {
+                          baseColor 0.00010681315327687495 0.0017547875181200886 0.9982146944380865
+                        }
+                        geometry DEF G_BLUEBOX Box {
+                          size 0.15 0.01 0.1
+                        }
+                      }
+                    ]
+                    boundingObject USE G_BLUEBOX
+                    physics Physics {
+                    }
                   }
                 }
               ]
